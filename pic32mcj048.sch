@@ -5185,7 +5185,6 @@ Source: AVX .. aphvc.pdf</description>
 <part name="R1" library="user_rcl" deviceset="R_REG" device="" value="10k"/>
 <part name="R2" library="user_rcl" deviceset="R_REG" device="" value="1k"/>
 <part name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X6" device="" package3d_urn="urn:adsk.eagle:package:22472/2"/>
-<part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U$3" library="user_swich" deviceset="TAKUTOSUITTI2" device=""/>
 </parts>
 <sheets>
@@ -5275,9 +5274,6 @@ Source: AVX .. aphvc.pdf</description>
 <attribute name="NAME" x="16.51" y="153.035" size="1.778" layer="95"/>
 <attribute name="VALUE" x="16.51" y="132.08" size="1.778" layer="96"/>
 </instance>
-<instance part="GND10" gate="1" x="7.62" y="134.62" smashed="yes">
-<attribute name="VALUE" x="5.08" y="132.08" size="1.778" layer="96"/>
-</instance>
 <instance part="U$3" gate="G$1" x="-50.8" y="124.46" smashed="yes" rot="R90"/>
 </instances>
 <busses>
@@ -5353,9 +5349,9 @@ Source: AVX .. aphvc.pdf</description>
 <label x="-38.1" y="154.94" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="4"/>
-<wire x1="20.32" y1="142.24" x2="7.62" y2="142.24" width="0.1524" layer="91"/>
-<label x="7.62" y="142.24" size="1.778" layer="95" rot="R180"/>
+<pinref part="JP1" gate="A" pin="2"/>
+<wire x1="20.32" y1="147.32" x2="7.62" y2="147.32" width="0.1524" layer="91"/>
+<label x="7.62" y="147.32" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -5425,10 +5421,9 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="-38.1" y="121.92"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="5"/>
-<wire x1="20.32" y1="139.7" x2="7.62" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="GND10" gate="1" pin="GND"/>
-<wire x1="7.62" y1="139.7" x2="7.62" y2="137.16" width="0.1524" layer="91"/>
+<pinref part="JP1" gate="A" pin="3"/>
+<wire x1="20.32" y1="144.78" x2="7.62" y2="144.78" width="0.1524" layer="91"/>
+<label x="7.62" y="144.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MCLR" class="0">
@@ -5445,7 +5440,7 @@ Source: AVX .. aphvc.pdf</description>
 <segment>
 <pinref part="JP1" gate="A" pin="1"/>
 <wire x1="20.32" y1="149.86" x2="7.62" y2="149.86" width="0.1524" layer="91"/>
-<label x="7.62" y="149.86" size="1.778" layer="95" rot="R180"/>
+<label x="7.62" y="149.86" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -5469,9 +5464,9 @@ Source: AVX .. aphvc.pdf</description>
 <label x="50.8" y="5.08" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="2"/>
-<wire x1="20.32" y1="147.32" x2="7.62" y2="147.32" width="0.1524" layer="91"/>
-<label x="7.62" y="147.32" size="1.778" layer="95" rot="R180"/>
+<pinref part="JP1" gate="A" pin="5"/>
+<wire x1="20.32" y1="139.7" x2="7.62" y2="139.7" width="0.1524" layer="91"/>
+<label x="7.62" y="139.7" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PGD" class="0">
@@ -5481,9 +5476,9 @@ Source: AVX .. aphvc.pdf</description>
 <label x="50.8" y="2.54" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="3"/>
-<wire x1="20.32" y1="144.78" x2="7.62" y2="144.78" width="0.1524" layer="91"/>
-<label x="7.62" y="144.78" size="1.778" layer="95" rot="R180"/>
+<pinref part="JP1" gate="A" pin="4"/>
+<wire x1="20.32" y1="142.24" x2="7.62" y2="142.24" width="0.1524" layer="91"/>
+<label x="7.62" y="142.24" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
