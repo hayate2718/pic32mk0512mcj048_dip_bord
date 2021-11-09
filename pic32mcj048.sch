@@ -6642,7 +6642,8 @@ sot23-6も含まれる</description>
 <label x="154.94" y="5.08" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="20.32" y1="104.14" x2="10.16" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="104.14" x2="17.78" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="104.14" x2="10.16" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="104.14" x2="10.16" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 <pinref part="IC1" gate="G$1" pin="VSS"/>
@@ -6650,6 +6651,10 @@ sot23-6も含まれる</description>
 <wire x1="10.16" y1="96.52" x2="10.16" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="96.52" x2="10.16" y2="96.52" width="0.1524" layer="91"/>
 <junction x="10.16" y="96.52"/>
+<wire x1="17.78" y1="104.14" x2="17.78" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="121.92" x2="50.8" y2="121.92" width="0.1524" layer="91"/>
+<junction x="17.78" y="104.14"/>
+<pinref part="R3" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="U$6" gate="G$1" pin="PIN5_S1"/>
@@ -7294,17 +7299,13 @@ sot23-6も含まれる</description>
 <segment>
 <wire x1="20.32" y1="99.06" x2="12.7" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="12.7" y1="99.06" x2="12.7" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="12.7" y1="106.68" x2="12.7" y2="121.92" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="121.92" x2="50.8" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="106.68" x2="12.7" y2="127" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="VDD"/>
 <pinref part="C12" gate="G$1" pin="1"/>
 <wire x1="5.08" y1="104.14" x2="5.08" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="106.68" x2="12.7" y2="106.68" width="0.1524" layer="91"/>
 <junction x="12.7" y="106.68"/>
 <pinref part="P+2" gate="1" pin="+5V"/>
-<wire x1="12.7" y1="127" x2="12.7" y2="121.92" width="0.1524" layer="91"/>
-<junction x="12.7" y="121.92"/>
 </segment>
 </net>
 <net name="CAN_N" class="0">
