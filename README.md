@@ -4,7 +4,9 @@
 2. 振動子などの最低限必要な外部回路を搭載する
 3. 書き込み端子以外の汎用IOをすべて使用可にする
 
-|Number|Name||Function
+ReservedPin
+
+|Number|Name|Function|
 |---|---|---|
 |4|MCLR|MCLR|
 |5|VSS|VSS|
