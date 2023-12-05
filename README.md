@@ -33,6 +33,7 @@ ReservedPin
 |42|VSS|VSS|
 |43|VDD|VDD|
 
+![ボードを上からみた図](https://private-user-images.githubusercontent.com/58509900/288066802-6c386add-c361-40bc-9075-142109f2b9cd.jpg)
 
 ## 考え中
 <b>
