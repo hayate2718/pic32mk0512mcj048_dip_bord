@@ -38,6 +38,59 @@ ReservedPin
 ![pic32mcj048_top](https://github.com/hayate2718/pic32mk0512mcj048_dip_bord/assets/58509900/6c386add-c361-40bc-9075-142109f2b9cd)
 
 
+## エラッタ
+Harmony V3 でコードを出力して、PLIBを使ったときに出力されたコードを書き換えないとうまく動作しないことがあった。<br>
+その対処を記録しておく。
+### SPI slave
+受信割り込みハンドラ内でSPIxBUFが一回目の読み取り以降変化しない。<br>
+対処:SPIxBUFに書き込みを行いSPIxBUFをクリアする。<br>
+以下例
+```c++
+void SPI2_RX_InterruptHandler (void)
+{
+    uint32_t receivedData = 0;
+
+    spi2Obj.rxInterruptActive = true;
+
+    while (!(SPI2STAT & _SPI2STAT_SPIRBE_MASK))
+    {
+        /* Receive buffer is not empty. Read the received data. */
+        receivedData = SPI2BUF;
+        
+        memset((void*)&SPI2BUF,0,sizeof(SPI2BUF)); //add code
+
+        if (spi2Obj.rdInIndex < SPI2_READ_BUFFER_SIZE)
+        {
+            SPI2_ReadBuffer[spi2Obj.rdInIndex++] = receivedData;
+        }
+    }
+
+    /* Clear the receive interrupt flag */
+    SPI2_CLEAR_RX_INT_FLAG();
+
+    spi2Obj.rxInterruptActive = false;
+
+    /* Check if CS interrupt occured before the RX interrupt and that CS interrupt delegated the responsibility to give
+     * application callback to the RX interrupt */
+
+    if (spi2Obj.csInterruptPending == true)
+    {
+        spi2Obj.csInterruptPending = false;
+        spi2Obj.transferIsBusy = false;
+
+        spi2Obj.wrOutIndex = 0;
+        spi2Obj.nWrBytes = 0;
+
+        if(spi2Obj.callback != NULL)
+        {
+            spi2Obj.callback(spi2Obj.context);
+        }
+
+        /* Clear the read index. Application must read out the data by calling SPI2_Read API in the callback */
+        spi2Obj.rdInIndex = 0;
+    }
+}
+```
 ## 考え中
 <b>
 PINネームを大きめに入れたい<br>
