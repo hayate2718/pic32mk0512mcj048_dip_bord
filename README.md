@@ -41,6 +41,10 @@ ReservedPin
 ## エラッタ
 Harmony V3 でコードを出力して、PLIBを使ったときに出力されたコードを書き換えないとうまく動作しないことがあった。<br>
 その対処を記録しておく。
+
+### コンパイラの最適化
+割り込みハンドラと共有する変数に`volatile`修飾子をつける。
+
 ### SPI slave
 受信割り込みハンドラ内でSPIxBUFが一回目の読み取り以降変化しない。<br>
 対処:SPIxBUFに書き込みを行いSPIxBUFをクリアする。<br>
@@ -96,5 +100,6 @@ void SPI2_RX_InterruptHandler (void)
 PINネームを大きめに入れたい<br>
 LED駆動用FETをプルダウンする<br>
 IO引き出し線をもう少し太くしたい<br>
-在庫があればCANトラをSOICにしたい
+在庫があればCANトラをSOICにしたい<br>
+redemi が長くなりすぎたらwikiにまとめる。
 </b>
